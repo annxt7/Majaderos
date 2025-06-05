@@ -1,5 +1,5 @@
 // Fecha de fin de las votaciones
-const fechaFin = new Date("2025-06-13T23:59:59");
+const fechaFin = new Date("2025-06-11T23:59:59");
 
 function actualizarTemporizador() {
   const ahora = new Date();
