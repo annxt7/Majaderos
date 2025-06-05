@@ -4,67 +4,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartelera de Películas</title>
+    <title>Majaderos Film Awards 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link href="./general.css" rel="stylesheet">
-    <link href="./js/contador.js">
     <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
 </head>
 
 <body>
 
     <header class="header-custom">
-        <h1>Majaderos Film Awards 2025</h1>
-        <p>Descubre las películas que están en exhibición ahora mismo.</p>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-auto"> <img src="/logo-majaderos.png" alt="Logo de la Empresa"
+                    class="img-fluid logo-header">
+            </div>
+            <div class="col-auto">
+                <h1>Majaderos Film Awards 2025</h1>
+            </div>
+
+        </div>
+        </div>
     </header>
 
-    <main class="container pt-1">
-        <section class="contador">
-            <p>
-                <span id="days"></span> días / <span id="hours"></span> horas / <span id="minutes"></span> minutos /
-                <span id="seconds"></span> segundos
-            </p>
-        </section>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 g-4 m-2">
-            <div class="col">
-                <div class="card">
-                    <img src="./portadas/The influencia Ciga30 and the ant Lua.png" class="card-img-top"
-                        alt="Póster Película 1">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Watch
-                    </button>
+    <main class="container pt-4 pb-5">
+        <section class="contador mb-5 p-4">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h2>Voting ends in:</h2>
+                    <h2 class="countdown-timer">
+                        <span id="days"></span> days
+                        <span id="hours"></span> hours
+                        <span id="minutes"></span> minutes
+                        <span id="seconds"></span> seconds
+                    </h2>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfE6Zy6_dGByCpEemYwmMQxVkA9Ya_0SQPsaEkF_rPMqF9aEA/viewform?usp=sharing&ouid=109300760174558703179" target="_blank" class="text-decoration-none">
+                        <button class="btn boton">Vote here</button>
+                    </a>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true" >
-                    <div class="modal-dialog modal-dialog-centered" >
-                        <div class="modal-content  bg-black text-light"  style="width: auto !important; height: auto !important;">
-                            <iframe src="https://drive.google.com/file/d/1GSJhnT1nykVirDM0PJdv3k8u-XgfAu1L/preview"
-                                width="800px" height="506px" allow="autoplay" allowfullscreen></iframe>
-                            <h3>Titulo del video</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nihil culpa, quasi
-                            accusantium iste corporis animi optio qui. Cumque molestiae minima magnam laborum non
-                            facere velit suscipit culpa consequuntur accusantium?</p>
+                <div class="col-12 col-md-4 text-center mt-3 mt-md-0">
+                    <div class="qr-container d-inline-block p-2 rounded-3">
+                        <img src="./QR/QRForm.png" alt="QR para votar" class="img-fluid qr-image">
+                        <p class="text-white-50 small mt-2">Scan to vote</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-grid">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/3Majorras.jpg" class="card-img-top" alt="Póster de The Three Majoreras">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal1">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal1" tabindex="-1" aria-labelledby="movieModal1Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white  " data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/1RkovjEN6hhP4Bq3H-Xz_3fODPOCJmZzk/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal1Label">The Three Majoreras</h3>
+                                    <p class="movie-description">The short film is about three friends that they are
+                                        musketeers and they are from the
+                                        island of Fuerteventura. The three friends are called Atenea, Porthosina and
+                                        Aramisina. The three of them are going to fight the grumpy count. Because he
+                                        wanted
+                                        to take the balloons away from the children. Therefore, they will fight against
+                                        him
+                                        in order to regain the children's happiness.
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Melanie plays as Artemisa<br>
+                                            Yadiara plays as Porthosina<br>
+                                            Rebeca plays as Atenea
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/IdairaAndMarina.PNG" class="card-img-top"
+                            alt="Póster de Idaira And Marina">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal2">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal2" tabindex="-1" aria-labelledby="movieModal2Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/1286Yb_15KRwjtNkdrpp1iePLoBZOE61N/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal2Label">Idaira And Marina</h3>
+                                    <p class="movie-description">Idaira, a dreamy 7-year-old girl, excitedly wakes up
+                                        her older sister Marina, 11, to go buy a giant candy as a birthday gift for her
+                                        mother. Despite Marina's caution, they get lost looking for the store and run
+                                        into a mysterious older lady who promises to have the biggest candy in a
+                                        supposedly special store.
+                                        The woman guides them to an abandoned house, where Idaira, impulsive and
+                                        trusting, enters alone and falls into a trap. The lady turns out to be dangerous
+                                        and kidnaps her. Marina, who had been left outside out of mistrust, bravely
+                                        rescues her after hearing her screams.
+                                        Finally, they both escape and walk away safely, understanding that safety and
+                                        family love are more important than any gift.
+
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Nayara plays as young sister<br />
+                                            Marta plays as older sister and old lady
+
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/Inside.jpg" class="card-img-top" alt="Póster de Inside">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal3">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal3" tabindex="-1" aria-labelledby="movieModal3Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                       
+                                            src="https://drive.google.com/file/d/1oCUCzkQL8kpaAIYrbu77YdzFsRw8GnIR/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal3Label">The Real Inside Out</h3>
+                                    <p class="movie-description">"Inside Riley's mind... something has changed."
+                                        Clicks, likes, and endless scrolling bring her joy... but also anxiety.
+                                        The emotions are on edge and this time, no filter can hide it.
+
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Alba plays as Riley<br />
+                                            Gaia plays as joy<br />
+                                            Cristina plays as sadness<br />
+                                            Elisa plays as disgust<br />
+
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/RapunzelandClara.JPG" class="card-img-top"
+                            alt="Póster de Rapunzel and Clara">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal4">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal4" tabindex="-1" aria-labelledby="movieModal4Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/10AAROdIG67ZN3yjzSxoWU2jroJhQlET8/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal4Label">Rapunzel and Clara</h3>
+                                    <p class="movie-description">Rapunzel prefers creating art instead of studying, so
+                                        her parents punish her by locking her in a tower without technology. Her friend
+                                        Clara secretly visits her and helps convince her parents that she can learn in
+                                        her own way. In the end, Rapunzel finds a balance between studying and
+                                        expressing herself creatively—all thanks to Clara’s support.
+
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Nayara plays as Rapunzel<br>
+                                            Paula plays as Clara
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/Snowhite.jpg" class="card-img-top" alt="Póster de Snow White">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal5">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal5" tabindex="-1" aria-labelledby="movieModal5Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/1OQa7AT5ZHKqg5Pr8fWgULKwKCUR0R0BN/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal5Label">Snowhite and the Emotions</h3>
+                                    <p class="movie-description">In this version of Snow White, the dwarfs are emotions
+                                        that will torment the protagonist until she finds a solution
+
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Koral plays as Snow white
+                                            Ingrid is the witch<br />
+                                            Gabriela is Anxiety<br />
+                                            Yraya is disgust<br />
+                                            Marta plays as joy<br />
+                                            Mifaya plays as anger
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/TheInfluencer.jpg" class="card-img-top" alt="Póster de The Influencer">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal6">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal6" tabindex="-1" aria-labelledby="movieModal6Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/1Ex3dIXe0XelyCDVWZE7jlnTAme65j7yK/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal6Label">The Influencer Ciga30 and the Ant
+                                        Lua</h3>
+                                    <p class="movie-description">This tale of "The Influencer Ciga30 and the Ant Lua" is
+                                        a story that conveys a lesson about work, effort, responsibility, and foresight.
+                                        In it, the grasshopper spends all her time singing and enjoying herself, while
+                                        the ant dedicates herself to gathering food, helping with household chores, and
+                                        school tasks. When summer arrives and the school year ends, the grasshopper, who
+                                        has not fulfilled her responsibilities, finds herself very sad and will miss out
+                                        on summer vacation. The lesson of this story is that excessive use of social
+                                        media brings negative consequences by losing focus on responsibility and
+                                        constant effort.
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>Yaremi plays as Ciga30<br>
+                                            Rosario plays as Ant Lua
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card movie-card">
+                        <img src="./portadas/TheGirl.jpg" class="card-img-top" alt="Póster de The Girl">
+                        <button type="button" class="btn btn-watch" data-bs-toggle="modal"
+                            data-bs-target="#movieModal7">
+                            Watch <img src="./play-fill.svg" class="botonplay" alt="Play icon">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="movieModal7" tabindex="-1" aria-labelledby="movieModal7Label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content bg-dark text-light">
+                                <div class="modal-header border-0 pb-3">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body pt-0">
+                                    <div class="video-container mb-3">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/17wfRJzfICoCYXiv6_EtZKk5Wy2bNsMm2/preview"
+                                            allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                    <h3 class="modal-title fs-4" id="movieModal7Label">The Girl who cried broke</h3>
+                                    <p class="movie-description">This short film is based on the traditional tale “The Boy Who Cried Wolf”.
+It talks about lies and loss of credibility, where a girl ruins her friendship with her friend because of unnecessary lies about money. She always cries because she has no money, but when she truly needed it, nobody was there.
+Will she figure out how to earn back her trust? Will she be able to get out of the money problem?
+                                    </p>
+                                    <p class="movie-cast">
+                                        <strong>
+                                          Inés plays as Patri the liar<br>
+                                        Nira plays as Mary<br/>
+                                        Ylenia plays as friend and waitress 
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
     </main>
+
     <footer class="footer-custom">
-        <p>&copy; 2025 Cartelera de Películas. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Majaderos Film Awards.A website made by Kevin, Jordi, Angie and Fernando.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-            const myModal = document.getElementById('myModal')
-            const myInput = document.getElementById('myInput')
-
-            myModal.addEventListener('shown.bs.modal', () => {
-                myInput.focus()
-            })
         </script>
     <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
+    <script src="./js/contador.js"></script>
 </body>
 
 </html>
